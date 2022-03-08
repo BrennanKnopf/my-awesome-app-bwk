@@ -34,8 +34,8 @@ jobs:
     
     - name: show maven, grade and ant version
       run: mvn -version
-      run: ./gradlew --version
-      run: Ant -version
+           ./gradlew --version
+            Ant -version
     
     - run: echo
     
