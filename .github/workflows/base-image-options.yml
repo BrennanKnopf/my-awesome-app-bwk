@@ -45,7 +45,7 @@ jobs:
     - run: echo
     
     - name: show the directory of selenium_jars path
-      run: $<SELENIUM_JARS>
+      run: echo $SELENIUM_JARS
     
     - run: echo
     
