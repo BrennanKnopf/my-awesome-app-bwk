@@ -34,13 +34,13 @@ jobs:
     
     - name: show maven, grade and ant version
       run: mvn -version
-           ./gradlew --version
+           gradlew --version
             Ant -version
     
     - run: echo
     
     - name: show the installed root drectory of android_sdk
-      run: ls root
+      run: ls ANDROID_SDK
       
     - run: echo
     
