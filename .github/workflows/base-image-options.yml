@@ -40,7 +40,7 @@ jobs:
     - run: echo
     
     - name: show the installed root drectory of android_sdk
-      run: $<ANDROID_SDK_ROOT>
+      run: $ANDROID_SDK_ROOT
       
     - run: echo
     
