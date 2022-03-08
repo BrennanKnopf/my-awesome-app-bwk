@@ -1,0 +1,70 @@
+name: Base Image Options
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  
+    
+jobs: 
+  Single-Command:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: echo "Hello out there!"
+
+  Multi-line:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: list the current directory contents
+      run: ls
+    
+    - run: echo
+    
+    - name: show hte version of java
+      run: java -version
+    
+    - run: echo
+    
+    - name: show the verison of git
+      run: git -version
+      
+    - run: echo 
+    
+    - name: show maven, grade and ant version
+      run: mvn -version
+      run: ./gradlew --version
+      run: Ant -version
+    
+    - run: echo
+    
+    - name: show the installed root drectory of android_sdk
+      run: ls root
+      
+    - run: echo
+    
+    - name: show the directory of selenium_jars path
+      run: $<SELENIUM_JARS>
+    
+    - run: echo
+    
+    - name: show the runner workspace location
+      run: echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+      
+    - run: echo 
+      
+    - name: who how the disc is laid out
+      run: df
+    
+    - run: echo
+    
+    - name: show all of the enviornment variables
+      run: env -0 | sort -z | tr'\0' '\n'
+    
+    
+      
+      
+    
+    
+    
