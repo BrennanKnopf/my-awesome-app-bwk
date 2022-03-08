@@ -39,8 +39,8 @@ jobs:
     
     - run: echo
     
-    - name: show the installed root drectory of android_sdk
-      run: $ANDROID_SDK_ROOT
+    # - name: show the installed root drectory of android_sdk
+    #   run: $ANDROID_SDK_ROOT
       
     - run: echo
     
@@ -50,7 +50,7 @@ jobs:
     - run: echo
     
     - name: show the runner workspace location
-      run: echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+      run: echo $runner_workspace
       
     - run: echo 
       
