@@ -17,15 +17,15 @@ jobs:
     steps:
      - uses: actions/checkout@v2
 
+     - name: Build the Docker image
+       run: docker build . --file Dockerfile  --tag brennanknopf/my-awesome-app-bwk:latest
+
      - name: Run Docker compose on Dev files
        run: docker-compose -f "docker-compose-dev.yml" up -d --build my-awesome-app-bwk-test
      
      - name: Env variables
        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
        
-     - name: Build the Docker image
-       run: docker build . --file Dockerfile  --tag brennanknopf/my-awesome-app-bwk:latest
-
      - name: Add "date-stamp" tag to the image
        run: docker image tag brennanknopf/my-awesome-app-bwk:latest brennanknopf/my-awesome-app-bwk:${{env.date-stamp}}
        
