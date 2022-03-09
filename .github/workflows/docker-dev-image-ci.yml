@@ -18,7 +18,7 @@ jobs:
      - uses: actions/checkout@v2
 
      - name: Run Docker compose on Dev files
-       run: docker-compose -f "docker-compose-dev.yml" up -d --build test
+       run: docker-compose -f "docker-compose-dev.yml" up -d --build my-awesome-app-bwk-test
      
      - name: Env variables
        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB
@@ -35,7 +35,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME}}
         password: ${{ secrets.DOCKER_PASSWORD}}
     
-     - name: Push the Docker image to Dockcer Hub
+     - name: Push the Docker image to Docker Hub
        run: docker push --all-tags brennanknopf/my-awesome-app-bwk
 
 
