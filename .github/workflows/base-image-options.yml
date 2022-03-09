@@ -36,6 +36,9 @@ jobs:
 
     - name: show the directory of selenium_jars path
       run: echo $SELENIUM_JARS
+
+    - name: show who i am
+      run: whoami
     
     - name: show the runner workspace location
       run: echo $runner_workspace
