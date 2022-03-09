@@ -28,8 +28,8 @@ jobs:
       
     - name: show maven, gradle and ant version
       run: mvn -version
-           gradlew --version
-            Ant --version
+           gradle --version
+            ant -version
     
     - name: show the installed root drectory of android_sdk
       run: echo $ANDROID_SDK_ROOT
@@ -41,7 +41,7 @@ jobs:
       run: whoami
     
     - name: show the runner workspace location
-      run: echo $runner_workspace
+      run: echo $RUNNER_WORKSPACE
   
     - name: who how the disc is laid out
       run: df
