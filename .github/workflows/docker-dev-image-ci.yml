@@ -1,7 +1,7 @@
 name: Docker Dev Image CI
 
 env:
-  DATE_STAMP: ${date +%s}
+  DATE_STAMP: $(date +%s)
 
 on:
   push:
@@ -20,8 +20,8 @@ jobs:
      - name: Build the Docker image
        run: docker build . -f "Dockerfile"  -t "brennanknopf/my-awesome-app-bwk:latest"
 
-     - name: Run Docker compose on Dev files
-       run: docker-compose -f "docker-compose-dev.yml" up -d --build "my-awesome-app-bwk"
+    #  - name: Run Docker compose on Dev files
+    #    run: docker-compose -f "docker-compose-dev.yml" up -d --build "my-awesome-app-bwk"
      
      - name: Env variables
        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
