@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 // Simple Hello Word Node App
 const APP_PORT = process.env.APP_PORT || 3000; app.get('/', (req, res) => {
     res.send('Hello Brennan! Nice to see you!')
