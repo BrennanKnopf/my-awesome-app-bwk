@@ -18,7 +18,7 @@ jobs:
      - uses: actions/checkout@v2
 
      - name: Build the Docker image
-       run: docker build . --file Dockerfile  --tag brennanknopf/my-awesome-app-bwk:latest
+       run: docker build . -f "Dockerfile"  -t "brennanknopf/my-awesome-app-bwk:latest"
 
      - name: Run Docker compose on Dev files
        run: docker-compose -f "docker-compose-dev.yml" up -d --build my-awesome-app-bwk-test
