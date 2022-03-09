@@ -28,7 +28,7 @@ jobs:
       
     - name: show maven, gradle and ant version
       run: mvn -version
-           gradle --version
+           gradle -version
             ant -version
     
     - name: show the installed root drectory of android_sdk
