@@ -2,13 +2,15 @@ version: '3.9'
 
 services:
 
-  my-awesome-app-bwk:
-    container_name: my-awesome-app-bwk
+  prod-web:
+    container_name: my-awesome-app-bwk-aws
+    image: brennanknopf/my-awesome-app-bwk:latest
+
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
-    ports:
-     - "8080:80"
     volumes:
+      - './:/app'
       - '/app/node_modules'
-      - .:/app
+    ports:
+      - '80:8080'
