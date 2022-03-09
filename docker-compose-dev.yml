@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+  my-awesome-app-bwk:
+    container_name: my-awesome-app-bwk
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+    - .:/app
+    - '/app/node_modules'
+    ports:
+      - '3002:3000'
+
+  my-awesome-app-bwk-test:
+    container_name: my-awesome-app-bwk
+    image: my-awesome-app-bwk_my-awesome-app-bwk
+    volumes:
+     - .:/app
+     - '/app/node_modules'
+    command: ["npm", "run", "test"]

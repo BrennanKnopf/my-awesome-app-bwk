@@ -38,7 +38,7 @@ jobs:
       run: echo $ANDROID_SDK_ROOT
 
     - name: show the directory of selenium_jars path
-      run: echo $SELENIUM_JARS_PATH
+      run: echo $SELENIUM_JARS
 
     - name: show who i am
       run: whoami

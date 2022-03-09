@@ -1,2 +1,8 @@
+docker-compose-dev.yml
+docker-compose.yml
+Dockerfile
+Dockerfile.dev
+
+.dockerignore
 node_modules
 npm-debug.log
