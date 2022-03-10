@@ -4,7 +4,7 @@ env:
   APP_NAME: my-awesome-app-bwk
   AWS_REGION: us-east-2
   AWS_PLATFORM: Docker
-  DATE_STAMP: $(date +%s)
+  PIPELINE_ID: $GITHUB_RUN_ID-$GITHUB_RUN_NUMBER
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Version Label
         run: |
-          echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
+          echo "aws_version_label=${{env.APP_NAME}}-${{env.PIPELINE_ID}}" >> $GITHUB_ENV
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
@@ -33,6 +33,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: ${{env.APP_NAME}}
           environment_name: Myawesomeappbwk-env
-          version_label: ${{env.date-stamp}}
+          version_label: ${{env.aws_version_label}}
           region: ${{env.AWS_REGION}}
           deployment_package: docker-compose.yml
